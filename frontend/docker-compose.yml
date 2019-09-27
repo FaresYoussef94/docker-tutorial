@@ -7,5 +7,13 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - /app/node_modules
-      - .:/app
+      - /app/node_modules #The bookmarked folder
+      - .:/app #referenced folder
+  tests:
+    build: #Builds configuration
+      context: . #context to search for the Dockerfile
+      dockerfile: Dockerfile.dev # The Dockerfile itself
+    volumes:
+      - /app/node_modules #The bookmarked folder
+      - .:/app #referenced folder
+    command: ["npm", "run", "test"]

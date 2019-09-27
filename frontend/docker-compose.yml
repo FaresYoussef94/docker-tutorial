@@ -1,0 +1,11 @@
+version: "3"
+services:
+  web:
+    build: #Builds configuration
+      context: . #context to search for the Dockerfile
+      dockerfile: Dockerfile.dev # The Dockerfile itself
+    ports:
+      - "3000:3000"
+    volumes:
+      - /app/node_modules
+      - .:/app

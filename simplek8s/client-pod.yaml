@@ -7,6 +7,6 @@ metadata:
 spec:
   containers:
     - name: client #trivial name to the container so that we can refer to it
-      image: faresyoussef/fibonacci_server #image name of the container we want to deploy
+      image: faresyoussef/multi-client #image name of the container we want to deploy
       ports:
         - containerPort: 3000 #the port we want to export

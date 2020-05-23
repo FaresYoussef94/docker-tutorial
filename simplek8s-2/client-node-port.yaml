@@ -1,12 +1,12 @@
-apiVersion: v1
-kind: Service
-metadata:
-  name: client-node-port
-spec:
-  type: NodePort
+apiVersion: v1 #this is used to access a set of predefinied types. for example v1 has access to Pod and apps/v1 has access to StatefulSet
+kind: Service #Kind of the kubernetes object
+metadata: #metadata about the object
+  name: client-node-port #name of the object
+spec: #specs that defines the object
+  type: NodePort #The type of the Service object
   ports:
-    - ports: 3050
-      targetPort: 3000
-      nodePort: 31515
-  selector:
+    - port: 3050 #this is used if another Pod needs access to the Pod that is exposed by this Service object.
+      targetPort: 3000 #The port of the Pod that we want to access
+      nodePort: 31515 #The port is exposed outside the cluster. This will be used as "http://localhost:31515"
+  selector: #This is to link to this service object to the appropriate pod. The "component: web" is an arbitrary key:value pair. They can be anything else.
     component: web

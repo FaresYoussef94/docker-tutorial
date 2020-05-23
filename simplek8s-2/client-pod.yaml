@@ -1,12 +1,12 @@
-apiVersion: v1
-kind: Pod
-metadata:
-  name: client-pod
-  labels:
+apiVersion: v1 #this is used to access a set of predefinied types. for example v1 has access to Pod and apps/v1 has access to StatefulSet
+kind: Pod #Kind of the kubernetes object
+metadata: #metadata about the object
+  name: client-pod #name of the object
+  labels: #This is used to label the Pod so that it can be reached by the Service object. The "component: web" is an arbitrary key:value pair
     component: web
-spec:
+spec: #specs that defines the object
   containers:
-    - name: client
-      image: faresyoussef/multi-client
-      ports:
+    - name: client #Name of the container
+      image: faresyoussef/multi-client #The container image
+      ports: #The port that is exposed by the container
         - containerPort: 3000

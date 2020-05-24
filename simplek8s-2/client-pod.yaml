@@ -7,6 +7,6 @@ metadata: #metadata about the object
 spec: #specs that defines the object
   containers:
     - name: client #Name of the container
-      image: faresyoussef/multi-client #The container image
+      image: faresyoussef/multi-worker #The container image
       ports: #The port that is exposed by the container
-        - containerPort: 3000
+        - containerPort: 9999

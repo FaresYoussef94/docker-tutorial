@@ -9,7 +9,8 @@ spec:
       component: web
   template: #This defines the template of the pod to be created
     metadata:
-      component: web
+      labels:
+        component: web
     spec:
       containers:
         - name: client

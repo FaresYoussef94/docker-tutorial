@@ -13,7 +13,7 @@ spec:
         component: postgres
     spec:
       volumes: #This will reach out for peristent volumes
-        - name: postrgres-storage
+        - name: postgres-storage
           persistentVolumeClaim:
             claimName: database-persistent-volume-claim #The name of the PVC
       containers:
